@@ -9,5 +9,7 @@ jobs:
     #     working-directory: /path/to/your/app
     steps:
       - uses: actions/checkout@v3
+      - name: Install
+        run: npm install
       - name: Build
         run: npm run build
