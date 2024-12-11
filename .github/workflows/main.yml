@@ -1,4 +1,4 @@
-name: hello-world
+name: vitrine-workflow
 on: push
 jobs:
   deploy:
