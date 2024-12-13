@@ -9,8 +9,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          path: '../../vitrine-next'
       - name: Install
         run: npm install
       - name: Build
