@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          path: '/home/ysr/projects'
+          path: '../vitrine-next'
       - name: Install
         run: npm install
       - name: Build
