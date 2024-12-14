@@ -15,7 +15,7 @@ export default function Home() {
         />
         <ol>
           <li>
-            Get started by flying <code>app/page.tsx</code>.
+            Get started by modifying <code>app/page.tsx</code>.
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
