@@ -42,7 +42,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className={styles.secondary}
           >
-            NO to Read our docs
+            NO to Reados our docs
           </a>
         </div>
       </main>
