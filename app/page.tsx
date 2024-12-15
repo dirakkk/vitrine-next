@@ -42,7 +42,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className={styles.secondary}
           >
-            RENOLD SERRY to Read our docs
+            fare SERRY to Read our docs
           </a>
         </div>
       </main>
