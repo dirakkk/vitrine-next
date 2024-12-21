@@ -16,10 +16,13 @@ jobs:
       - name: Cache node modules
         uses: actions/cache@v4
         with:
-          path: /home/ysr/projects/actions-runner/_work/vitrine-next/vitrine-next/.next/cache
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path:  |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - name: Install
         run: npm ci
       - name: Build
