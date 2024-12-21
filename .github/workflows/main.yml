@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '18'
       - name: Show vars
-        run: echo "La valeur de github.workspace est : ${{ github.workspace }}"
+        run: echo "La valeur de  ${{ github.workspace }}"
       - name: Cache node modules
         uses: actions/cache@v4
         with:
