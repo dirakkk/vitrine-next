@@ -69,7 +69,7 @@ jobs:
           timeout: 2000
           failOnError: true
           # Either one of the following three formats for 'issue' is valid (spaces are trimmed)
-          issue: SCRUM-2
+          issue: steps.checkPrTitle.outputs.scope
           #issue: XYZ-1, XYZ-2
           #issue: |
           # XYZ-1
