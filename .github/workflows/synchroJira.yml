@@ -70,13 +70,9 @@ jobs:
           failOnError: true
           # Either one of the following three formats for 'issue' is valid (spaces are trimmed)
           issue: ${{steps.checkPrTitle.outputs.scope}}
-          #issue: XYZ-1, XYZ-2
-          #issue: |
-          # XYZ-1
-          # XYZ-2
           # Either one of the following two formats for 'transition' is valid 
-          #transition: In Progress
-          transition: 21
+          transition: In Progress
+          #transition: 21
           # following are properties that can be set if defined in the transition screen & required by validator
           #assignee: 123456:12345678-abcd-abcd-abcd-1234567890ab
           #comment: Plaintext only
