@@ -2,14 +2,25 @@ name: Jira Issue Transition
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, edited,synchronized]
 
 jobs:
   jira-issue-transition:
     name: Transition Jira issue
     runs-on: ubuntu-latest
     steps:
+      - name: Check if PR Title contains Ticket
+        id: checkPrTitle
+        uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          headerPattern: '^(SCRUM-\d*): (.*)$'
+          headerPatternCorrespondence: type, subject
+
       - name: Jira Login
+        id: jiraLogin
+        if: steps.checkPrTitle.outcome == 'success'
         uses: frieder/gha-jira-login@v1
         env:
           JIRA_BASE_URL: ${{ vars.JIRA_BASE_URL }}
@@ -17,6 +28,7 @@ jobs:
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
 
       - name: Transition Issue
+        if: steps.jiraLogin.outcome == 'success'
         uses: frieder/jira-issue-transition@v1
         with:
           retries: 1
