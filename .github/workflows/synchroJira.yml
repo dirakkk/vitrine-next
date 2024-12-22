@@ -1,0 +1,63 @@
+name: Jira Issue Transition
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  jira-issue-transition:
+    name: Transition Jira issue
+    runs-on: ubuntu-latest
+    steps:
+      - name: Jira Login
+        uses: frieder/gha-jira-login@v1
+        env:
+          JIRA_BASE_URL: ${{ vars.JIRA_BASE_URL }}
+          JIRA_USER_EMAIL: ${{ vars.JIRA_USER_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+
+      - name: Transition Issue
+        uses: frieder/jira-issue-transition@v1
+        with:
+          retries: 1
+          retryDelay: 10
+          timeout: 2000
+          failOnError: true
+          # Either one of the following three formats for 'issue' is valid (spaces are trimmed)
+          issue: SCRUM-2
+          #issue: XYZ-1, XYZ-2
+          #issue: |
+          # XYZ-1
+          # XYZ-2
+          # Either one of the following two formats for 'transition' is valid 
+          #transition: In Progress
+          transition: 21
+          # following are properties that can be set if defined in the transition screen & required by validator
+          #assignee: 123456:12345678-abcd-abcd-abcd-1234567890ab
+          #comment: Plaintext only
+          #components: |
+          #  = component1
+          #  = component2
+          #  + component3
+          #  - component2
+          #customfields: |
+          #  10050: some value
+          #  10051: 2023-01-01
+          #  10052: https://github.com/marketplace?type=action
+          #description: Plaintext only
+          #duedate: 2023-02-01
+          #fixversions: |
+          #  = 1.0
+          #  = 1.1
+          #  + 2.0
+          #  - 1.1
+          #labels: |
+          #  = foo
+          #  = foo2
+          #  = bar2
+          #  + bar
+          #  - foo2
+          #  - bar2
+          #priority: Lowest
+          #resolution: Won't Do
+          #summary: Some new fancy title
