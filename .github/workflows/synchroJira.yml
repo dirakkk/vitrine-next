@@ -15,7 +15,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          headerPattern: '^(SCRUM-\d*): (.*)$'
+          headerPattern: '^(SCRUM\-\d*): (.*)$'
           headerPatternCorrespondence: type, subject
 
       - name: Jira Login
