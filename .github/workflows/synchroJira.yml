@@ -50,8 +50,6 @@ jobs:
           #components: |
           #  = component1
           #  = component2
-          #  + component3
-          #  - component2
           #customfields: |
           #  10050: some value
           #  10051: 2023-01-01
