@@ -76,9 +76,6 @@ jobs:
           # following are properties that can be set if defined in the transition screen & required by validator
           #assignee: 123456:12345678-abcd-abcd-abcd-1234567890ab
           #comment: Plaintext only
-          #components: |
-          #  = component1
-          #  = component2
           #customfields: |
           #  10050: some value
           #  10051: 2023-01-01
