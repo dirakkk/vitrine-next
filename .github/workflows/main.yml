@@ -13,8 +13,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - name: Show vars
-        run: echo "La valeur de  ${{ github.workspace }}"
       - name: Cache node modules
         uses: actions/cache@v4
         with:
