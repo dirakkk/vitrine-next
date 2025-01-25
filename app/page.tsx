@@ -42,7 +42,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className={styles.secondary}
           >
-            Adrien est en roue libre
+            Adrien est en roue arrière
           </a>
         </div>
       </main>
