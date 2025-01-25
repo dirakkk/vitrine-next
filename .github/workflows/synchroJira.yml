@@ -68,32 +68,5 @@ jobs:
           retryDelay: 10
           timeout: 2000
           failOnError: true
-          # Either one of the following three formats for 'issue' is valid (spaces are trimmed)
           issue: ${{steps.checkPrTitle.outputs.scope}}
-          # Either one of the following two formats for 'transition' is valid 
           transition: In Progress
-          #transition: 21
-          # following are properties that can be set if defined in the transition screen & required by validator
-          #assignee: 123456:12345678-abcd-abcd-abcd-1234567890ab
-          #comment: Plaintext only
-          #customfields: |
-          #  10050: some value
-          #  10051: 2023-01-01
-          #  10052: https://github.com/marketplace?type=action
-          #description: Plaintext only
-          #duedate: 2023-02-01
-          #fixversions: |
-          #  = 1.0
-          #  = 1.1
-          #  + 2.0
-          #  - 1.1
-          #labels: |
-          #  = foo
-          #  = foo2
-          #  = bar2
-          #  + bar
-          #  - foo2
-          #  - bar2
-          #priority: Lowest
-          #resolution: Won't Do
-          #summary: Some new fancy title
