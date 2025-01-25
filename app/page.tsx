@@ -17,7 +17,7 @@ export default function Home() {
           <li>
             Get started by running <code>app/page.tsx</code>.
           </li>
-          <li>Save and see your  instantly.</li>
+          <li>Save and see your changes instantly.</li>
         </ol>
 
         <div className={styles.ctas}>
@@ -42,7 +42,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className={styles.secondary}
           >
-            Adrien est en place
+            Adrien est en bois
           </a>
         </div>
       </main>
