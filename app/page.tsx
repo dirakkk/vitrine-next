@@ -42,7 +42,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className={styles.secondary}
           >
-            Adrien est en place
+            Adrien est en bois
           </a>
         </div>
       </main>
