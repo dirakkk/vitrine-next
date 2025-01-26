@@ -42,7 +42,6 @@ jobs:
           elif [ "${{ github.event.action }}" == "closed" ]; then
             echo "transition=31" >> $GITHUB_ENV
           else
-            echo "transition ${{ github.event.action }}" 
             echo "transition=11" >> $GITHUB_ENV
           fi
 
