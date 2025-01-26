@@ -40,16 +40,16 @@ jobs:
           JIRA_USER_EMAIL: ${{ vars.JIRA_USER_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
 
-    - name: Determine transition value
-      id: determine-transition
-      run: |
-        if [ "${{ github.event.action }}" == "opened" ]; then
-          echo "transition=21" >> $GITHUB_ENV
-        elif [ "${{ github.event.action }}" == "closed" ]; then
-          echo "transition=31" >> $GITHUB_ENV
-        else
-          echo "transition=11" >> $GITHUB_ENV
-        fi
+      - name: Determine transition value
+        id: determine-transition
+        run: |
+          if [ "${{ github.event.action }}" == "opened" ]; then
+            echo "transition=21" >> $GITHUB_ENV
+          elif [ "${{ github.event.action }}" == "closed" ]; then
+            echo "transition=31" >> $GITHUB_ENV
+          else
+            echo "transition=11" >> $GITHUB_ENV
+          fi
 
       - name: Transition Issue
         if: steps.jiraLogin.outcome == 'success'
