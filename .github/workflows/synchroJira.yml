@@ -43,7 +43,7 @@ jobs:
       - name: Determine transition value
         id: determine-transition
         run: |
-          if [ "${{ github.event.action }}" == "opened" || "${{ github.event.action }}" == "reopened"  ]; then
+          if [ "${{ github.event.action }}" == "opened"] || ["${{ github.event.action }}" == "reopened"  ]; then
             echo "transition=21" >> $GITHUB_ENV
           elif [ "${{ github.event.action }}" == "closed" ]; then
             echo "transition=31" >> $GITHUB_ENV
