@@ -23,7 +23,7 @@ jobs:
       - name: Compile l'application avec la nouvelle version du code 
         run: npm ci
       - name: Construit une version de type production
-        run: npm run build
+        run: npm run dev #build
       - name: Démarre ou redemarre le serveur d'application
         run: |
           if pm2 list | grep -q "vitrine-next"; then
