@@ -20,14 +20,14 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-      - name: Compile l'application avec la nouvelle version du code 
-        run: npm ci
-      - name: Construit une version de type production
-        run: npm run build
-      - name: Démarre ou redemarre le serveur d'application
-        run: |
-          if pm2 list | grep -q "vitrine-next"; then
-            pm2 restart vitrine-next
-          else
-            pm2 start npm --name "vitrine-next" -- start -- -p 3000
-          fi
+      #- name: Compile l'application avec la nouvelle version du code 
+      #  run: npm ci
+      #- name: Construit une version de type production
+      #  run: npm run build
+      #- name: Démarre ou redemarre le serveur d'application
+      #  run: |
+      #    if pm2 list | grep -q "vitrine-next"; then
+      #      pm2 restart vitrine-next
+      #    else
+      #      pm2 start npm --name "vitrine-next" -- start -- -p 3000
+      #    fi
