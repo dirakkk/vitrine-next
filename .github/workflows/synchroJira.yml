@@ -2,7 +2,7 @@ name: Jira Issue Transition
 
 on:
   pull_request:
-    types: [opened, edited,synchronized]
+    types: [opened, edited,synchronized, closed, reopened]
 
 jobs:
   jira-issue-transition:
