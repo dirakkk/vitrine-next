@@ -17,7 +17,7 @@ export default function Home() {
           <li>
             Get started by running <code>app/page.tsx</code>.
           </li>
-          <li>Save and see your changes instantly.</li>
+          <li>Save and see your changes later on.</li>
         </ol>
 
         <div className={styles.ctas}>
