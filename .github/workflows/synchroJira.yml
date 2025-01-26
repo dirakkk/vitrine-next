@@ -19,18 +19,10 @@ jobs:
             fix
             feat
           scopes: |
-            core
             ui
             SCRUM-\d+
           # Configure that a scope must always be provided.
           requireScope: true
-          disallowScopes: |
-            release
-            [A-Z]+
-          ignoreLabels: |
-            bot
-            ignore-semantic-pull-request
-
       - name: Jira Login
         id: jiraLogin
         if: steps.checkPrTitle.outcome == 'success'
