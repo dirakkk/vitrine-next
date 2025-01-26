@@ -49,4 +49,4 @@ jobs:
           timeout: 2000
           failOnError: true
           issue: ${{steps.checkPrTitle.outputs.scope}}
-          transition: In Progress
+          transition: 21
