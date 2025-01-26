@@ -27,18 +27,6 @@ jobs:
           disallowScopes: |
             release
             [A-Z]+
-          subjectPattern: ^(?![A-Z]).+$
-          # If `subjectPattern` is configured, you can use this property to override
-          # the default error message that is shown when the pattern doesn't match.
-          # The variables `subject` and `title` can be used within the message.
-          subjectPatternError: |
-            The subject "{subject}" found in the pull request title "{title}"
-            didn't match the configured pattern. Please ensure that the subject
-            doesn't start with an uppercase character.
-          # If the PR contains one of these newline-delimited labels, the
-          # validation is skipped. If you want to rerun the validation when
-          # labels change, you might want to use the `labeled` and `unlabeled`
-          # event triggers in your workflow.
           ignoreLabels: |
             bot
             ignore-semantic-pull-request
@@ -60,32 +48,5 @@ jobs:
           retryDelay: 10
           timeout: 2000
           failOnError: true
-          # Either one of the following three formats for 'issue' is valid (spaces are trimmed)
           issue: ${{steps.checkPrTitle.outputs.scope}}
-          # Either one of the following two formats for 'transition' is valid 
           transition: In Progress
-          #transition: 21
-          # following are properties that can be set if defined in the transition screen & required by validator
-          #assignee: 123456:12345678-abcd-abcd-abcd-1234567890ab
-          #comment: Plaintext only
-          #customfields: |
-          #  10050: some value
-          #  10051: 2023-01-01
-          #  10052: https://github.com/marketplace?type=action
-          #description: Plaintext only
-          #duedate: 2023-02-01
-          #fixversions: |
-          #  = 1.0
-          #  = 1.1
-          #  + 2.0
-          #  - 1.1
-          #labels: |
-          #  = foo
-          #  = foo2
-          #  = bar2
-          #  + bar
-          #  - foo2
-          #  - bar2
-          #priority: Lowest
-          #resolution: Won't Do
-          #summary: Some new fancy title
