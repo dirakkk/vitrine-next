@@ -16,6 +16,8 @@ export default function Home() {
         <ol>
           <li>Darva.</li>
           <li>Catamania</li>
+          <li>IMA</li>
+          
         </ol>
 
         <div className={styles.ctas}>
