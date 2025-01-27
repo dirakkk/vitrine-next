@@ -17,6 +17,7 @@ export default function Home() {
           <li>Darva.</li>
           <li>Catamania</li>
           <li>IMA</li>
+          <li>COVEA</li>
           
         </ol>
 
