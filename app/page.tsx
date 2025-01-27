@@ -17,7 +17,7 @@ export default function Home() {
           <li>
             Get started by running <code>app/page.tsx</code>.
           </li>
-          <li>On verra ce texte en <b>tres gras</b>.</li>
+          <li>On verra ce texte en <b> gras</b>.</li>
         </ol>
 
         <div className={styles.ctas}>
