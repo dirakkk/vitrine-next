@@ -14,10 +14,8 @@ export default function Home() {
           priority
         />
         <ol>
-          <li>
-            Get started by running <code>app/page.tsx</code>.
-          </li>
-          <li>On verra ce texte en <b> gras</b>.</li>
+          <li>Darva.</li>
+          <li>Catamania</li>
         </ol>
 
         <div className={styles.ctas}>
