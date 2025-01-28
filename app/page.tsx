@@ -14,7 +14,7 @@ export default function Home() {
           priority
         />
         <ol>
-          <li>Darva.</li>
+          <li>Darva</li>
           <li>Catamania</li>
           <li>IMA.</li>
           <li>COVEA</li>
